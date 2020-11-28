@@ -1,0 +1,20 @@
+<p>listado-clientes works!</p>
+<p>Usuario en sesion: {{emailUsuarioActual}} </p>
+<h1>Listado de clientes</h1>
+<table class="table">
+    <thead>
+        <th>Nombre:</th>
+        <th>Cédula</th>
+        <th>Categoria</th>
+        <th>Eliminar</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cliente of clientesTodos">
+            <td>{{cliente.nombre}}</td>
+            <td>{{cliente.cedula}}</td>
+            <td>{{cliente.categoria}}</td>
+            <td>
+                <button (click)="deleteCliente(cliente)">Eliminar</button></td>
+        </tr>
+    </tbody>
+</table>

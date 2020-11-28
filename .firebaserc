@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "ntdtest-ae3a3"
+  },
+  "targets": {
+    "ntdtest-ae3a3": {
+      "hosting": {
+        "app-ntd": [
+          "ntdtest-ae3a3"
+        ]
+      }
+    }
+  }
+}
