@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import {first} from 'rxjs/operators';
 
 @Injectable()
 export class AutenticacionService {
@@ -21,7 +22,6 @@ export class AutenticacionService {
   }
 
   getUsuarioActual() {
-    let user = this.afAuth.currentUser;
-    return user;
+    return this.afAuth.authState.pipe(first()).toPromise();
   }
 }

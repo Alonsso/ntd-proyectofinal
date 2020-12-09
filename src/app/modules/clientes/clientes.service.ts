@@ -1,60 +1,85 @@
-import { AngularFireDatabase, AngularFireDatabaseModule, AngularFireList } from '@angular/fire/database';
+import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Cliente } from './cliente.model';
 import { Injectable } from '@angular/core';
-import { Categoria, Cliente } from './cliente.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientesService {
 
-  private dbPath = '/clientes';
-  private dbPathCategories = '/categorias';
+  cliente: Cliente;
+  clientePrueba: any;
+  idURL: string;
 
-  clientesRef: AngularFireList<Cliente> = null;
-  categoriasRef: any;
+  constructor(private db: AngularFireDatabase, private afs: AngularFirestore, private route: Router) {
+    // esto permite que se cree la collección categorias
+    // con dos documentos de id:1 e id:2f
+    this.afs.collection('categorias').doc('1').set({ nombre: 'Antiguo' });
+    this.afs.collection('categorias').doc('2').set({ nombre: 'Nuevo' });
+  }
 
-  constructor(private db: AngularFireDatabase) {
-    this.clientesRef = db.list(this.dbPath);
-    this.categoriasRef = db.list(this.dbPathCategories);
-    const categoriasRefe = db.database.ref('categorias');
-    categoriasRefe.set([
+
+  getDatosCliente(): Observable<any> {
+    const tutRef = this.afs.doc('clientes/' + this.idURL);
+    return new Observable((o) => {
+      setTimeout(() => {
+        o.next(tutRef);
+      }, 1000);
+    });
+  }
+
+
+  deleteClienteOne(userKey) {
+    return this.afs.collection('users').doc(userKey).delete();
+  }
+
+  getAllCategorias() {
+    return this.afs.collection('categorias').snapshotChanges();
+  }
+
+  getAllClientes() {
+    return this.afs.collection('clientes').snapshotChanges();
+  }
+
+  async updateOneCliente(idr, nombrer, cedular, direccionr) {
+    this.afs.doc('clientes/' + idr).update(
       {
-        id: 1,
-        nombre: 'Antiguo'
-      },
+        nombre: nombrer,
+        cedula: cedular,
+        direccion: direccionr
+      });
+  }
+
+  createCliente(cliente: Cliente): any {
+    return this.afs.collection('clientes').add(
       {
-        id: 2,
-        nombre: 'Nuevo'
-      }
-    ]);
+        cedula: cliente.cedula,
+        nombre: cliente.nombre,
+        direccion: cliente.direccion,
+        categoria: cliente.categoria
+      });
   }
 
-  deleteOne(cliente: Cliente): Promise<void> {
-    return this.clientesRef.remove(cliente.key);
+  loadCliente(id: string) {
+    this.idURL = id;
+    const clientes = this.afs.doc('clientes/' + id).valueChanges();
+    clientes.subscribe(data => {
+      this.clientePrueba = data;
+    });
+    return this.clientePrueba;
   }
 
-  getAllCategorias(): AngularFireList<Categoria> {
-    return this.categoriasRef;
+
+  deleteCliente(clienteId: string) {
+    return this.afs.collection('clientes').doc(clienteId).delete();
   }
 
-  getAll(): AngularFireList<Cliente> {
-    return this.clientesRef;
-  }
-
-  create(cliente: Cliente): any {
-    return this.clientesRef.push(cliente);
-  }
-
-  update(key: string, value: any): Promise<void> {
-    return this.clientesRef.update(key, value);
-  }
-
-  delete(key: string): Promise<void> {
-    return this.clientesRef.remove(key);
-  }
-
-  deleteAll(): Promise<void> {
-    return this.clientesRef.remove();
+  deleteAllClientes(): Promise<void> {
+    // return this.clientesRef.remove();
+    return null;
   }
 
 }
