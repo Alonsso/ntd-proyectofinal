@@ -1,35 +1,36 @@
+import { ModificadoclienteComponent } from './modules/clientes/modificado-cliente/modificado-cliente.component';
+import { ListadoClientesComponent } from './modules/clientes/listado-clientes/listado-clientes.component';
 import { NuevoClienteComponent } from './modules/clientes/nuevo-cliente/nuevo-cliente.component';
-import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './components/login/login.component';
-import { PersonasComponent } from './components/personas/personas.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AngularFireModule } from '@angular/fire';
-import { environment } from 'src/environments/environment';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { ListadoClientesComponent } from './modules/clientes/listado-clientes/listado-clientes.component';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from './../environments/environment';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    PersonasComponent,
     NuevoClienteComponent,
-    ListadoClientesComponent
+    ListadoClientesComponent,
+    ModificadoclienteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule,
-    CommonModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

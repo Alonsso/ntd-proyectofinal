@@ -1,6 +1,6 @@
+import { Cliente, Categoria } from './../cliente.model';
 import { ClientesService } from './../clientes.service';
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../cliente.model';
 
 @Component({
   selector: 'app-nuevo-cliente',
@@ -10,29 +10,27 @@ import { Cliente } from '../cliente.model';
 export class NuevoClienteComponent implements OnInit {
 
   cliente: Cliente = new Cliente();
-  submitted = false;
+  submitted: boolean = false;
   categoriasTodas: any;
 
-  constructor(private clienteService: ClientesService) {
-    this.categoriasTodas = this.clienteService.categoriasRef;
-    clienteService.categoriasRef.valueChanges().subscribe(categorias => {
-      this.categoriasTodas = categorias;
-    });
-  }
+  constructor(private clienteService: ClientesService) {}
 
   ngOnInit(): void {
-  }
-
-  saveCliente(): void {
-    this.clienteService.create(this.cliente).then(() => {
-      console.log('Nuevo cliente creado');
-      this.submitted = true;
+    this.clienteService.getAllCategorias().subscribe(data => {
+      this.categoriasTodas = data.map(e => {
+        return {
+          id: e.payload.doc.id, ...e.payload.doc.data() as Categoria
+        };
+      });
     });
   }
 
-  newCliente(): void{
-    this.submitted = false;
-    this.cliente = new Cliente();
+  doCreateCliente(cliente: Cliente): void {
+    this.clienteService.createCliente(this.cliente);
+    this.submitted = true;
   }
 
+  newCliente(): void {
+    this.submitted = false;
+  }
 }
