@@ -2,53 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>AppNtd</title>
+  <title>TechnoFruver</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light pb-lg-3 pt-lg-3">
+  <a class="navbar-brand" href="#">TechnoFruver</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="personas">Personas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="listaClientes">Clientes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="clienteNuevo">Nuevo cliente</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-  <div class="container">
-    <app-root></app-root>
+  <div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="productos">Productos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="registro">Nuevo Cliente</a>
+      </li>
+    </ul>
+
+    <a class="nav-link pr-lg-5" href="carrito">
+      <svg width="3em" height="2em" viewBox="0 0 16 16" class="bi bi-basket" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"/>
+      </svg>
+    </a>
   </div>
+</nav>
+
+<div class="container">
+  <app-root></app-root>
+</div>
 </body>
 </html>

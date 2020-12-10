@@ -23,6 +23,6 @@ export class LoginComponent implements OnInit {
     console.log('form login: ', this.loginForm.value);
     const { email, password } = this.loginForm.value;
     this.authSvc.login(email, password);
-    this.router.navigate(['/listaClientes']);
+    this.router.navigate(['/productos']);
     }
 }

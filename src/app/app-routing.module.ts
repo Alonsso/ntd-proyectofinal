@@ -5,6 +5,8 @@ import { NuevoClienteComponent } from './modules/clientes/nuevo-cliente/nuevo-cl
 import { PersonasComponent } from './components/personas/personas.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {ProductosComponent} from './components/productos/productos.component';
+import {CarritoComponent} from './components/carrito/carrito.component';
 
 const routes: Routes = [
   { path: 'personas', component: PersonasComponent },
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', loadChildren: () => import('./autenticacion/login/login.module').then(m => m.LoginModule) },
   { path: 'registro', loadChildren: () => import('./autenticacion/registro/registro.module').then(m => m.RegistroModule) },
-  { path: 'modificaCliente/:ids', component: ModificadoclienteComponent}
+  { path: 'modificaCliente/:ids', component: ModificadoclienteComponent},
+  { path: 'productos', component: ProductosComponent},
+  { path: 'carrito', component: CarritoComponent}
 ];
 
 @NgModule({
