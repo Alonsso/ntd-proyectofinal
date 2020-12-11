@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'registro', loadChildren: () => import('./autenticacion/registro/registro.module').then(m => m.RegistroModule) },
   { path: 'productos', component: ProductosComponent},
   { path: 'carrito', component: CarritoComponent},
-  { path: 'detalle/:id/:enlace/:precio/:contenido/:nombre', component: DetalleComponent}
+  { path: 'productos/detalle/:id', component: DetalleComponent}
 ];
 
 @NgModule({
