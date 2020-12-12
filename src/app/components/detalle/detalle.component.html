@@ -2,6 +2,8 @@
 <section class="mb-5">
 
   <div class="row">
+
+    <!-- Imagen del producto -->
     <div class="col-md-6 mb-4 mb-md-0">
 
       <div id="mdb-lightbox-ui"></div>
@@ -28,35 +30,33 @@
       </div>
 
     </div>
+
+    <!-- Detalle del producto -->
     <div class="col-md-6">
 
       <h5>{{nombre}}</h5>
       <p><span class="mr-1">Precio por gramo: <strong>{{precio / contenido}} COP</strong></span></p>
       <p><span class="mr-1">Precio unitario: <strong>{{precio}} COP</strong></span></p>
       <p><span class="mr-1">Contenido: <strong>{{contenido}}g</strong></span></p>
-
-
       <hr>
       <div class="table-responsive mb-2">
         <table class="table table-sm table-borderless">
           <tbody>
-          <tr>
-            <td class="pl-0 pb-0 w-25">Cantidad</td>
-
-          </tr>
-          <tr>
-            <td class="pl-0">
-              <div class="def-number-input number-input safari_only mb-0">
-
-                <input class="quantity" min="0" name="cantidad" value="1" type="number">
-                <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i
-                  class="fas fa-shopping-cart pr-2"></i>Agregar al Carrito
-                </button>
-
-              </div>
-            </td>
-
-          </tr>
+            <tr>
+              <td class="pl-0 pb-0 w-25">Cantidad</td>
+            </tr>
+            <tr>
+              <td class="pl-0">
+                <div class="def-number-input number-input safari_only mb-0">
+                  <form [formGroup]="addToCartForm" (ngSubmit)="add(addToCartForm.value)">
+                    <input formControlName="quantity" class="quantity" min="0" name="cantidad" value="1" type="number">
+                    <button type="submit" class="btn btn-light btn-md mr-1 mb-2"><i
+                      class="fas fa-shopping-cart pr-2"></i>Agregar al Carrito
+                    </button>
+                  </form>
+                </div>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductosService } from './mProducto/productos.service';
 import { AutenticacionService } from 'src/app/autenticacion/services/autenticacion.service';
 import { Producto } from './mProducto/producto.model';
-import {CarouselModule} from 'primeng/carousel';
+
 
 @Component({
   selector: 'app-productos',
@@ -20,7 +20,6 @@ export class ProductosComponent implements OnInit {
   constructor(private productoService: ProductosService,
               private autenticacion: AutenticacionService,
               private router: Router) { }
-
 
   /*
    doAgregarProducto(id: string) {
@@ -48,6 +47,11 @@ export class ProductosComponent implements OnInit {
         };
       });
     });
+  }
+
+  onLogout() {
+    this.autenticacion.logout();
+    this.router.navigate(['/']);
   }
 
 }

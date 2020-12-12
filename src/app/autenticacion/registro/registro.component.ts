@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
   export class RegistroComponent implements OnInit {
 
     registroForm = new FormGroup({
+      name: new FormControl(''),
       email: new FormControl(''),
       password: new FormControl(''),
     });
@@ -26,8 +27,8 @@ import { Router } from '@angular/router';
         console.log(
           'form: ',
           this.registroForm.value);
-        const { email, password } = this.registroForm.value;
-        this.authSvc.registrar(email, password);
+        const { name, email, password } = this.registroForm.value;
+        this.authSvc.registrar(email, password, name);
         this.router.navigate(['/']);
       }
   }

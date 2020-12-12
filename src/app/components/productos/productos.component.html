@@ -6,6 +6,21 @@
   <title>Productos</title>
 </head>
 <body>
+
+  <div align="right" class="logout">
+      <p>
+        {{user?.displayName}}
+      </p>
+  </div>
+
+  <div align="right" class="logout">
+    <a (click)="onLogout()">
+      <button>
+        SALIR
+      </button>
+    </a>
+  </div>
+
   <div class="container text-center">
     <hr>
     <h1>Lo mejor en mercado</h1>
@@ -14,29 +29,29 @@
       <hr>
   </div>
 
-<div class="container">
-  <div class="row" *ngIf="productosTodos">
-    <ng-container *ngFor="let producto of (productosTodos)">
-      <div class="card border-secondary mb-3 ml-3" style="border-radius: 0.2em;">
-            <div class="grid">
-              <a href="productos/detalle/{{producto.id}}">
-              <img src="{{producto.image }}" class="image" height="200px" width="200px"/>
-                <div class="container text-center">
-                    <p><span class="level-item">{{producto.nombre}}</span></p>
-                    <p><span class="level-item has-text-weight-bold">{{producto.categoria}}</span></p>
-                    <p><span class="level-item has-text-weight-bold">{{producto.marca}}</span></p>
-                    <p> <span class="level-item has-text-weight-bold">{{producto.peso}}g</span></p>
-                    <h6 style="color: green; font-size: 1.5rem;"><span class="level-item has-text-weight-bold">${{producto.precio}}</span></h6>
-                </div>
-              </a>
-              <!--<app-actions [product]="product"></app-actions>-->
-            </div>
-        </div>
-    </ng-container>
-    <div *ngIf="productosTodos.length === 0">
-      <span>There are no products that match your search, try something else.</span>
+  <div class="container">
+    <div class="row" *ngIf="productosTodos">
+      <ng-container *ngFor="let producto of (productosTodos)">
+        <div class="card border-secondary mb-3 ml-3" style="border-radius: 0.2em;">
+          <div class="grid">
+            <a href="productos/detalle/{{producto.id}}">
+            <img src="{{producto.image }}" class="image" height="200px" width="200px"/>
+              <div class="container text-center">
+                  <p><span class="level-item">{{producto.nombre}}</span></p>
+                  <p><span class="level-item has-text-weight-bold">{{producto.categoria}}</span></p>
+                  <p><span class="level-item has-text-weight-bold">{{producto.marca}}</span></p>
+                  <p> <span class="level-item has-text-weight-bold">{{producto.peso}}g</span></p>
+                  <h6 style="color: green; font-size: 1.5rem;"><span class="level-item has-text-weight-bold">${{producto.precio}}</span></h6>
+              </div>
+            </a>
+            <!--<app-actions [product]="product"></app-actions>-->
+          </div>
+          </div>
+      </ng-container>
+      <div *ngIf="productosTodos.length === 0">
+        <span>There are no products that match your search, try something else.</span>
+      </div>
     </div>
-  </div>
   </div>
 
 </body>

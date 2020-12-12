@@ -7,6 +7,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProductosService {
 
   producto: Producto;
@@ -25,6 +26,5 @@ export class ProductosService {
   get(id: any) {
     return this.afs.collection('productos').doc(id).valueChanges();
   }
-
 
 }

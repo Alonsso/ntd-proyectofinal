@@ -12,13 +12,21 @@ export class AutenticacionService {
     return resultado;
   }
 
-  async registrar(email: string, password: string) {
-    const resultado = await this.afAuth.createUserWithEmailAndPassword(email, password);
+  async registrar(email: string, password: string, name: string) {
+    const resultado = await this.afAuth
+      .createUserWithEmailAndPassword(email, password);
+
+    //Agrega el nombre
+    resultado.user.updateProfile({
+      displayName: name
+    });
+
     return resultado;
   }
 
   async logout() {
     await this.afAuth.signOut();
+    console.info('Sesión finalizada correctamente');
   }
 
   getUsuarioActual() {

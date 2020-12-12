@@ -22,7 +22,14 @@ export class LoginComponent implements OnInit {
   onLogin(): void {
     console.log('form login: ', this.loginForm.value);
     const { email, password } = this.loginForm.value;
-    this.authSvc.login(email, password);
-    this.router.navigate(['/productos']);
+    this.authSvc
+      .login(email, password)
+      .then(res => {
+        console.info('Inicio de sesión exitoso. Detalle: [' + res + '].');
+        this.router.navigate(['/productos']);
+      })
+      .catch(err => {
+        console.error('Error al iniciar sesión. Detalle: [' + err + '].');
+      });
     }
 }

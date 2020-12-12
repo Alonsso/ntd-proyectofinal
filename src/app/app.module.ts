@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CarouselComponent, CarouselModule } from 'ngx-owl-carousel-o';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,8 +32,7 @@ import {PagoComponent} from './components/pago/pago.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule,
-    CarouselModule
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

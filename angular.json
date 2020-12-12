@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "app-ntd"
+  "defaultProject": "app-ntd",
+  "cli": {
+    "analytics": false
+  }
 }

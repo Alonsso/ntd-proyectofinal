@@ -1,1 +1,67 @@
-<p>carrito works!</p>
+<table id border="2px">
+  <tr colspan="8">
+    <td colspan="1" nowrap>ID</td>
+    <td colspan="1" nowrap>NOMBRE</td>
+    <td colspan="1" nowrap>PRECIO</td>
+    <td colspan="1" nowrap>CATEGORIA</td>
+    <td colspan="1" nowrap>MARCA</td>
+    <td colspan="1" nowrap>PESO</td>
+    <td colspan="1" nowrap>CANTIDAD</td>
+    <td colspan="1" nowrap>TOTAL</td>
+  </tr>
+  <tr colspan="8" *ngFor="let item of cartItems">
+    <td colspan="1" nowrap>{{item.id}}</td>
+    <td colspan="1" nowrap>{{item.nombre}}</td>
+    <td colspan="1" nowrap>{{item.precio}}</td>
+    <td colspan="1" nowrap>{{item.categoria}}</td>
+    <td colspan="1" nowrap>{{item.marca}}</td>
+    <td colspan="1" nowrap>{{item.peso}}</td>
+    <td colspan="1" nowrap>{{item.cantidad}}</td>
+    <td colspan="1" nowrap>{{item.cantidad * item.precio}}</td>
+  </tr>
+</table>
+<table border="2px">
+  <tr colspan="8" >
+    <td colspan="7">TOTAL A PAGAR</td>
+    <td colspan="1">{{sum()}}</td>
+  </tr>
+</table>
+<!--<form [formGroup]="pagoForm" (ngSubmit)="onPago()">
+  <br>
+  <fieldset>
+    <div class="pl-lg-5 pr-lg-5">
+      <legend class="text-center">Registrarse</legend>
+      <br>
+      <div class="form-group"><label for="exampleInputName">Nombre</label> <input type="text" formControlName="name"
+                                                                                    class="form-control"
+                                                                                    id="exampleInputName"
+                                                                                    placeholder="Nombre Completo">
+      </div>
+      <br>
+      <div class="form-group"><label for="exampleInputEmail1">Correo</label> <input type="email" formControlName="email"
+                                                                                    class="form-control"
+                                                                                    id="exampleInputEmail1"
+                                                                                    aria-describedby="emailHelp"
+                                                                                    placeholder="Correo Electrónico: correo@ejemplo.com">
+        <small
+          id="emailHelp" class="form-text text-muted">Nunca compartiremos tus datos personales con nadie.</small></div>
+      <br>
+      <div class="form-group"><label for="exampleInputPassword1">Contraseña</label> <input type="password"
+                                                                                           formControlName="password"
+                                                                                           class="form-control"
+                                                                                           id="exampleInputPassword1"
+                                                                                           placeholder="Contraseña">
+        <br><br>
+        <button type="submit" class="btn btn-block btn-primary">Registrarse</button>
+
+        <div class="form-group">
+          <p><a [routerLink]="['/login']">Iniciar Sesión</a></p></div>
+      </div>
+    </div>
+  </fieldset>
+</form>-->
+<div align="right">
+  <button (click) = "pay()">
+    IR A PAGAR
+  </button>
+</div>
