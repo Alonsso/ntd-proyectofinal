@@ -48,7 +48,8 @@ export class CarritoComponent implements OnInit {
   }
 
   pay() {
-    this.cartService.pay(this.uid);
+    const { nId, nombre, apellido, direccion, telefono } = this.pagoForm.value;
+    this.cartService.pay(this.uid, nId, nombre, apellido, direccion, telefono);
   }
 
 }

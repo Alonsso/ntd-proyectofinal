@@ -77,7 +77,7 @@ export class CartService {
   }
 
   //agregar los datos de contacto pay(uid: string, direccion: string, telefono: string)
-  pay(uid: string) {
+  pay(uid: string, nId:string , nombre:string, apellido:string, direccion:string, telefono:string) {
 
     const order = this.generateOrder();
 
@@ -91,7 +91,13 @@ export class CartService {
       .collection(this.orders)
       .doc(order)
       .set({
-        uid: uid //agregar aqui los datos de contacto direccion y telefono
+        uid: uid,
+        nId: nId,
+        nombre: nombre,
+        apellido: apellido,
+        direccion: direccion,
+        telefono: telefono,
+         //agregar aqui los datos de contacto direccion y telefono
       }, {
         merge: true
       });
