@@ -1,18 +1,34 @@
 # AppNtd
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+> Aplicación web para el registro de clientes y venta de productos de un negocio predeterminado.
 
-## Development server
+[![NPM Version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Downloads Stats][npm-downloads]][npm-url]
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Instrucciones de ejecución
 
-## Code scaffolding
+Luego de clonar el repositorio, realizar: 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`npm update`
+
+Para utilizarlo por medio de firebase, cambiar la configuración en environments.ts.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Realizar el build del proyecto con `ng build --prod`
+
+Posteriormente, hacer `firebase deploy`
+
+## Local
+
+Para ejecutar el proyecto localmente, `ng serve -o`
+
+El proyecto se cargará en `http://localhost:4200/`
+
+## Version de angular utilizada:
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
 ## Running unit tests
 
@@ -25,3 +41,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# Manual de usuario
+
+![](/assets/images/1.png)
