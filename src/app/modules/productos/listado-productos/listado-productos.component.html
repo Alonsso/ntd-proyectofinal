@@ -1,0 +1,66 @@
+<p>listado-productos works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/vendor/slick-carousel/slick/slick.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="js-slick-carousel slick slick-gutters-1"
+     data-hs-slick-carousel-options='{
+       "prevArrow": "<span class=\"fas fa-arrow-left slick-arrow slick-arrow-soft-white slick-arrow-left slick-arrow-centered-y rounded-circle ml-sm-2 ml-xl-4\"></span>",
+       "nextArrow": "<span class=\"fas fa-arrow-right slick-arrow slick-arrow-soft-white slick-arrow-right slick-arrow-centered-y rounded-circle mr-sm-2 mr-xl-4\"></span>",
+       "slidesToShow": 3,
+       "responsive": [{
+         "breakpoint": 768,
+         "settings": {
+           "arrows": false
+         }
+       }]
+     }'>
+    <div class="space-3">
+    </div>
+  </div>
+  <div class="js-slide bg-img-hero-center" style="background-image: url(...);">
+    <div class="space-3">
+    </div>
+  </div>
+  <div class="js-slide bg-img-hero-center" style="background-image: url(...);">
+    <div class="space-3">
+    </div>
+  </div>
+  <div class="js-slide bg-img-hero-center" style="background-image: url(...);">
+    <div class="space-3">
+    </div>
+  </div>
+  <div class="js-slide bg-img-hero-center" style="background-image: url(...);">
+    <div class="space-3">
+    </div>
+  </div>
+  <div class="js-slide bg-img-hero-center" style="background-image: url(...);">
+    <div class="space-3">
+    </div>
+  </div>
+  <div class="js-slide bg-img-hero-center" style="background-image: url(...);">
+    <div class="space-3">
+    </div>
+  </div>
+  <div class="js-slide bg-img-hero-center" style="background-image: url(...);">
+    <div class="space-3">
+    </div>
+  </div>
+  <script src="./assets/vendor/slick-carousel/slick/slick.js"></script>
+  <script src="./assets/js/hs.slick-carousel.js"></script>
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF SLICK CAROUSEL
+      // =======================================================
+      $('.js-slick-carousel').each(function() {
+        var slickCarousel = $.HSCore.components.HSSlickCarousel.init($(this));
+      });
+    });
+  </script>
+</body>
+</html>
