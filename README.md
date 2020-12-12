@@ -2,9 +2,6 @@
 
 > Aplicación web para el registro de clientes y venta de productos de un negocio predeterminado.
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
 
 ## Instrucciones de ejecución
 
@@ -44,4 +41,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Manual de usuario
 
-![](/assets/images/1.png)
+![alt text](/assets/images/1.png)
