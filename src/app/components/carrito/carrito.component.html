@@ -1,5 +1,7 @@
-<table id border="2px">
-  <tr colspan="8">
+<br>
+<legend class="text-center">TU PEDIDO</legend>
+<table class="table table-default" id border="3px">
+  <tr class="table table-light" colspan="7">
     <td colspan="1" nowrap>ID</td>
     <td colspan="1" nowrap>NOMBRE</td>
     <td colspan="1" nowrap>PRECIO</td>
@@ -9,7 +11,7 @@
     <td colspan="1" nowrap>CANTIDAD</td>
     <td colspan="1" nowrap>TOTAL</td>
   </tr>
-  <tr colspan="8" *ngFor="let item of cartItems">
+  <tr colspan="7" *ngFor="let item of cartItems">
     <td colspan="1" nowrap>{{item.id}}</td>
     <td colspan="1" nowrap>{{item.nombre}}</td>
     <td colspan="1" nowrap>{{item.precio}}</td>
@@ -20,48 +22,46 @@
     <td colspan="1" nowrap>{{item.cantidad * item.precio}}</td>
   </tr>
 </table>
-<table border="2px">
-  <tr colspan="8" >
-    <td colspan="7">TOTAL A PAGAR</td>
+<table border="3px">
+  <tr colspan="7" >
+    <td colspan="6">TOTAL A PAGAR</td>
     <td colspan="1">{{sum()}}</td>
   </tr>
 </table>
-<!--<form [formGroup]="pagoForm" (ngSubmit)="onPago()">
-  <br>
+<form [formGroup]="pagoForm" (ngSubmit)="pay()">
   <fieldset>
     <div class="pl-lg-5 pr-lg-5">
-      <legend class="text-center">Registrarse</legend>
-      <br>
-      <div class="form-group"><label for="exampleInputName">Nombre</label> <input type="text" formControlName="name"
+      <legend class="text-center">DATOS DE ENVÍO</legend>
+      <div class="form-group"><label for="exampleInputId">Número de Identificación</label> <input type="text" formControlName="nId"
                                                                                     class="form-control"
-                                                                                    id="exampleInputName"
-                                                                                    placeholder="Nombre Completo">
+                                                                                    id="exampleInputId"
+                                                                                    placeholder="Número de Identificación">
       </div>
-      <br>
-      <div class="form-group"><label for="exampleInputEmail1">Correo</label> <input type="email" formControlName="email"
-                                                                                    class="form-control"
-                                                                                    id="exampleInputEmail1"
-                                                                                    aria-describedby="emailHelp"
-                                                                                    placeholder="Correo Electrónico: correo@ejemplo.com">
-        <small
-          id="emailHelp" class="form-text text-muted">Nunca compartiremos tus datos personales con nadie.</small></div>
-      <br>
-      <div class="form-group"><label for="exampleInputPassword1">Contraseña</label> <input type="password"
-                                                                                           formControlName="password"
-                                                                                           class="form-control"
-                                                                                           id="exampleInputPassword1"
-                                                                                           placeholder="Contraseña">
-        <br><br>
-        <button type="submit" class="btn btn-block btn-primary">Registrarse</button>
-
-        <div class="form-group">
-          <p><a [routerLink]="['/login']">Iniciar Sesión</a></p></div>
+      <div class="form-group"><label for="exampleInputNombre">Nombre</label> <input type="text" formControlName="nombre"
+        class="form-control"
+        id="exampleInputNombre"
+        placeholder="Nombre">
+      </div>
+      <div class="form-group"><label for="exampleInputApellido">Apellido</label> <input type="text" formControlName="apellido"
+        class="form-control"
+        id="exampleInputApellido"
+        placeholder="Apellido">
+      </div>
+      <div class="form-group"><label for="exampleInputDireccion">Dirección</label> <input type="text" formControlName="direccion"
+        class="form-control"
+        id="exampleInputDireccion"
+        placeholder="Dirección">
+      </div>
+      <div class="form-group"><label for="exampleInputTelefono">Teléfono</label> <input type="text" formControlName="telefono"
+        class="form-control"
+        id="exampleInputTelefono"
+        placeholder="Teléfono">
       </div>
     </div>
   </fieldset>
-</form>-->
+</form>
 <div align="right">
-  <button (click) = "pay()">
+  <button type="submit" class="btn btn-block btn-primary" (click) = "pay()">
     IR A PAGAR
   </button>
 </div>

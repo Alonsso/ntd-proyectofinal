@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { CartService } from './../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-carrito',
@@ -10,6 +11,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./carrito.component.css']
 })
 export class CarritoComponent implements OnInit {
+
+  pagoForm = new FormGroup({
+    nId: new FormControl(''),
+    nombre: new FormControl(''),
+    apellido: new FormControl(''),
+    direccion: new FormControl(''),
+    telefono: new FormControl(''),
+  });
 
   cartItems: IItem[] = [];
   uid: string;
