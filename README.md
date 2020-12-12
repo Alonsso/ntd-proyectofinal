@@ -41,4 +41,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Manual de usuario
 
-![alt text](/assets/images/1.png)
+![Alt Text](https://github.com/Alonsso/ntd-proyectofinal/tree/master/src/assets/images)
